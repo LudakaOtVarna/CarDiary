@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Admin</title>
+
+  <!-- Vendor CSS Files -->
+  <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="~/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="~/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Admin</span>
+      </a>
+    </div><!-- End Logo -->
+
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+                <a class="nav-link collapsed" asp-controller="Dashboard" asp-area="Administration" asp-action="Index">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+                <a class="nav-link collapsed" asp-controller="Users" asp-area="Administration" asp-action="Index">
+          <i class="bi bi-person"></i>
+          <span>Users</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" asp-controller="Cars" asp-area="Administration" asp-action="Index">
+          <i class="bx bxs-car"></i>
+          <span>Cars</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+                <a class="nav-link collapsed" asp-controller="Repairs" asp-area="Administration" asp-action="Index">
+          <i class="bi bi-hammer"></i>
+          <span>Repairs</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+                <a class="nav-link collapsed" asp-controller="Trips" asp-area="Administration" asp-action="Index">
+          <i class="bx bx-trip"></i>
+          <span>Trips</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+                <a class="nav-link collapsed" asp-controller="Refuels" asp-area="Administration" asp-action="Index">
+          <i class="ri-battery-2-charge-fill"></i>
+          <span>Refuels</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+ 
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+        @this.RenderBody()
+
+  </main><!-- End #main -->
+
+
+
+
+</body>
+
+</html>
+<script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
+<script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
+
+
+@await this.RenderSectionAsync("Scripts", required: false)

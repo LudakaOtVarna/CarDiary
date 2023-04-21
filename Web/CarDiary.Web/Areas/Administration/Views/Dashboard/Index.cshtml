@@ -1,0 +1,117 @@
+﻿@model IndexModel
+
+<div class="pagetitle">
+      <h1>Dashboard</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-8">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Cars <span>| Count</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bx bxs-car"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>@Model.CarsCount</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- End Sales Card -->
+                <!-- Revenue Card -->
+                <div class="col-xxl-4 col-md-6">
+                    <div class="card info-card revenue-card">
+
+
+                        <div class="card-body">
+                            <h5 class="card-title">Repairs <span>| Count</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-hammer"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>@Model.RepairsCount</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- End Revenue Card -->
+                <div class="col-xxl-4 col-xl-12">
+
+                    <div class="card info-card sales-card">
+
+
+                        <div class="card-body">
+                            <h5 class="card-title">Trips<span> | Count</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bx bx-trip"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>@Model.TripsCount</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- End Customers Card -->
+                <!-- Customers Card -->
+                <div class="col-xxl-4 col-xl-12">
+
+                    <div class="card info-card customers-card">
+
+
+                        <div class="card-body">
+                            <h5 class="card-title">Users<span> | Count</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>@Model.UsersCount</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- End Customers Card -->
+                <div class="col-xxl-4 col-xl-12">
+
+                    <div class="card info-card customers-card">
+
+
+                        <div class="card-body">
+                            <h5 class="card-title">Refuels<span> | Count</span></h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="ri-battery-2-charge-fill"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>@Model.RefuelsCount</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- End Customers Card -->

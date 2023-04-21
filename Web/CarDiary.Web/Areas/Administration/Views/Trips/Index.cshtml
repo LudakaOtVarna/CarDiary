@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TripModel>
+<div class="pagetitle">
+	<h1>Trips</h1>
+</div>
+<a class="btn btn-primary" asp-action="Create">Create</a>
+<table class="table table-primary text-center">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">DepartureAddress</th>
+			<th scope="col">ArrivalAddress</th>
+			<th scope="col">Time</th>
+			<th scope="col">Car</th>
+			<th scope="col">Is Deleted</th>
+			<th scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var trip in this.Model)
+		{
+			<tr>
+				<th>@trip.Id</th>
+				<th>@trip.DepartureAddress</th>
+				<th>@trip.ArrivalAddress</th>
+				<th>@trip.ArrivalTime.Subtract(@trip.DepartureTime).ToString("hh':'mm':'ss")</th>
+				<th>@trip.CarBrand @trip.CarModel</th>
+				<th>
+					@if (@trip.IsDeleted)
+					{
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked disabled>
+					}
+					else
+					{
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" disabled>
+					}
+				</th>
+				<th>
+					@if (@trip.IsDeleted)
+					{
+						<a class="btn btn-outline-success" asp-action="Recover" asp-route-id="@trip.Id">Recover</a>
+						<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@trip.Id">Hard Delete</a>
+					}else{
+						<a class="btn btn-warning" asp-action="Edit" asp-route-id="@trip.Id">Edit</a>
+						<a class="btn btn-danger" asp-action="Delete" asp-route-id="@trip.Id">Delete</a>
+						<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@trip.Id">Hard Delete</a>
+					}
+					
+					
+				</th>
+			</tr>
+		}

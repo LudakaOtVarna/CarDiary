@@ -1,0 +1,43 @@
+﻿@model IEnumerable<RefuelModel>
+<div class="pagetitle">
+	<h1>Refuels</h1>
+</div>
+<a class="btn btn-primary" asp-action="Create">Create</a>
+<table class="table table-primary text-center">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Amount</th>
+			<th scope="col">Price</th>
+			<th scope="col">Date</th>
+			<th scope="col">Car</th>
+			<th scope="col">Is Deleted</th>
+			<th scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var refuel in this.Model)
+		{
+			<tr>
+				<th>@refuel.Id</th>
+					<th>@refuel.Amount</th>
+					<th>@refuel.Price</th>
+					<th>@refuel.Date</th>
+						<th>@refuel.CarBrand @refuel.CarModel</th>
+						<th>
+					@if (@refuel.IsDeleted)
+					{
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked disabled>
+					}
+					else
+					{
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" disabled>
+					}
+						</th>
+					<th>
+				<a class="btn btn-warning" asp-action="Edit" asp-route-id="@refuel.Id">Edit</a>
+				<a class="btn btn-danger" asp-action="Delete" asp-route-id="@refuel.Id">Delete</a>
+						<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@refuel.Id">Hard Delete</a>
+					</th>
+			</tr>
+		}

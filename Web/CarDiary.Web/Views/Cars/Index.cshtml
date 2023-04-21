@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CarModel>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase">// Cars //</h6>
+            <h1 class="mb-5">Your Cars</h1>
+        </div>
+        <a class="btn btn-primary mb-4" asp-action="Create">Create</a>
+        <div class="row g-4">
+              @foreach (var car in this.Model)
+            {
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="/images/@car.ImageName" alt="">
+                        <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                                <a class="btn mx-1" asp-controller="Repairs" asp-action="Details" asp-route-id="@car.Id">Repairs</a>
+                                <a class="btn mx-1" asp-controller="Refuels" asp-action="Details" asp-route-id="@car.Id">Refuels</a>
+                                <a class="btn mx-1" asp-controller="Trips" asp-action="Details" asp-route-id="@car.Id">Trips</a>
+                        </div>
+                    </div>
+                    <div class="bg-light text-center p-4">
+                            <h5 class="fw-bold mb-0">@car.Brand | @car.Model</h5>
+                            <br>
+                            <small>
+                                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@car.Id">Edit</a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@car.Id">Delete</a>
+                            </small>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+@if(!this.Model.Any()){
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+}
