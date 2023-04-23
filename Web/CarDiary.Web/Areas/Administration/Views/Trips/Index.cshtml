@@ -35,16 +35,13 @@
 					}
 				</th>
 				<th>
-					@if (@trip.IsDeleted)
+					@if (!@trip.IsDeleted)
 					{
-						<a class="btn btn-outline-success" asp-action="Recover" asp-route-id="@trip.Id">Recover</a>
-						<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@trip.Id">Hard Delete</a>
-					}else{
 						<a class="btn btn-warning" asp-action="Edit" asp-route-id="@trip.Id">Edit</a>
 						<a class="btn btn-danger" asp-action="Delete" asp-route-id="@trip.Id">Delete</a>
-						<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@trip.Id">Hard Delete</a>
 					}
-					
+
+						<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@trip.Id">Hard Delete</a>
 					
 				</th>
 			</tr>

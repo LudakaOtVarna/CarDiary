@@ -23,7 +23,7 @@
 				<td><img width="100" src="/images/@car.ImageName" /></td>
 				<td>@car.Brand</td>
 				<td>@car.Model</td>
-				<td>@car.Date</td>
+				<td>@car.Date.ToShortDateString()</td>
 				<td>
 					@if (@car.IsDeleted)
 					{
@@ -34,8 +34,12 @@
 								<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" disabled>
 					}</td>
 				<td>
-					<a class="btn btn-warning" asp-action="Edit" asp-route-id="@car.Id">Edit</a>
-					<a class="btn btn-danger" asp-action="Delete" asp-route-id="@car.Id">Delete</a>
+					@if (!@car.IsDeleted)
+					{
+						<a class="btn btn-warning" asp-action="Edit" asp-route-id="@car.Id">Edit</a>
+						<a class="btn btn-danger" asp-action="Delete" asp-route-id="@car.Id">Delete</a>
+					}
+					
 					<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@car.Id">Hard Delete</a>
 				</td>
 		</tr>

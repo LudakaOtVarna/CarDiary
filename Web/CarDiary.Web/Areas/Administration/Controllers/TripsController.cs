@@ -115,21 +115,6 @@ namespace CarDiary.Web.Areas.Administration.Controllers
 
 		[HttpGet]
 		[Authorize]
-		public async Task<IActionResult> Recover(int id)
-		{
-			var trip = this.tripsService.GetById<TripInputModel>(id);
-
-			if (trip != null)
-			{
-                trip.IsDeleted = false;
-				await this.tripsService.UpdateAsync(id, trip);
-				return this.RedirectToAction(nameof(this.Index));
-			}
-			return Redirect("/Trips/Error");
-		}
-
-		[HttpGet]
-		[Authorize]
 		public async Task<IActionResult> HardDelete(int id)
 		{
 			var trip = this.tripsService.GetById<TripInputModel>(id);

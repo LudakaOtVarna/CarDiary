@@ -44,42 +44,51 @@
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
       <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Users" asp-area="Administration" asp-action="Index">
           <i class="bi bi-person"></i>
           <span>Users</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" asp-controller="Cars" asp-area="Administration" asp-action="Index">
           <i class="bx bxs-car"></i>
           <span>Cars</span>
         </a>
-      </li><!-- End F.A.Q Page Nav -->
+      </li>
 
       <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Repairs" asp-area="Administration" asp-action="Index">
           <i class="bi bi-hammer"></i>
           <span>Repairs</span>
         </a>
-      </li><!-- End Contact Page Nav -->
+      </li>
 
       <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Trips" asp-area="Administration" asp-action="Index">
           <i class="bx bx-trip"></i>
           <span>Trips</span>
         </a>
-      </li><!-- End Register Page Nav -->
+      </li>
 
       <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Refuels" asp-area="Administration" asp-action="Index">
           <i class="ri-battery-2-charge-fill"></i>
           <span>Refuels</span>
         </a>
-      </li><!-- End Login Page Nav -->
-
+      </li>
+            <li class="nav-item">
+                
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/")" method="post">
+                    <button class="nav-link collapsed" type="submit" style="border-style:none">
+                        <i class="bi bi-door-closed-fill"></i>
+                        <span>Logout</span>
+                    </button>
+                </form>
+            </li>
+          
  
 
     </ul>

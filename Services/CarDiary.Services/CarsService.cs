@@ -96,6 +96,33 @@ namespace CarDiary.Services
 		public async Task DeleteAsync(int id)
 		{
 			var car = this.carsRepository.All().FirstOrDefault(x => x.Id == id);
+
+
+			if (this.repairsRepository.All().Where(x => x.CarId == car.Id).Any())
+			{
+				var hisRepairs = this.repairsRepository.All().Where(x => x.CarId == car.Id);
+				foreach (var repair in hisRepairs)
+				{
+					this.repairsRepository.Delete(repair);
+				}
+			}
+			if (this.refuelsRepository.All().Where(x => x.CarId == car.Id).Any())
+			{
+				var hisRefuels = this.refuelsRepository.All().Where(x => x.CarId == car.Id);
+				foreach (var refuel in hisRefuels)
+				{
+					this.refuelsRepository.Delete(refuel);
+				}
+			}
+			if (this.tripsRepository.All().Where(x => x.CarId == car.Id).Any())
+			{
+				var hisTrips = this.tripsRepository.All().Where(x => x.CarId == car.Id);
+				foreach (var trip in hisTrips)
+				{
+					this.tripsRepository.Delete(trip);
+				}
+			}
+
 			this.carsRepository.Delete(car);
 			await this.carsRepository.SaveChangesAsync();
 		}

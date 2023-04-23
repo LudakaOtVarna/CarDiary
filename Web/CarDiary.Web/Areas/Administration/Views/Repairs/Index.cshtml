@@ -36,8 +36,12 @@
 
 				</th>
 				<th>
-					<a class="btn btn-warning" asp-action="Edit" asp-route-id="@repair.Id">Edit</a>
-					<a class="btn btn-danger" asp-action="Delete" asp-route-id="@repair.Id">Delete</a>
+					@if (!@repair.IsDeleted)
+					{
+						<a class="btn btn-warning" asp-action="Edit" asp-route-id="@repair.Id">Edit</a>
+						<a class="btn btn-danger" asp-action="Delete" asp-route-id="@repair.Id">Delete</a>
+					}
+					
 					<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@repair.Id">Hard Delete</a>
 				</th>
 			</tr>

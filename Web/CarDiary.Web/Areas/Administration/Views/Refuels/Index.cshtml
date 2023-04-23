@@ -22,7 +22,7 @@
 				<th>@refuel.Id</th>
 					<th>@refuel.Amount</th>
 					<th>@refuel.Price</th>
-					<th>@refuel.Date</th>
+					<th>@refuel.Date.ToShortDateString()</th>
 						<th>@refuel.CarBrand @refuel.CarModel</th>
 						<th>
 					@if (@refuel.IsDeleted)
@@ -35,8 +35,12 @@
 					}
 						</th>
 					<th>
-				<a class="btn btn-warning" asp-action="Edit" asp-route-id="@refuel.Id">Edit</a>
-				<a class="btn btn-danger" asp-action="Delete" asp-route-id="@refuel.Id">Delete</a>
+					@if (!@refuel.IsDeleted)
+					{
+						<a class="btn btn-warning" asp-action="Edit" asp-route-id="@refuel.Id">Edit</a>
+						<a class="btn btn-danger" asp-action="Delete" asp-route-id="@refuel.Id">Delete</a>
+					}
+				
 						<a class="btn btn-outline-danger" asp-action="HardDelete" asp-route-id="@refuel.Id">Hard Delete</a>
 					</th>
 			</tr>

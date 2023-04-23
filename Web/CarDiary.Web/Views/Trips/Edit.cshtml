@@ -26,17 +26,17 @@
 								<input asp-for="Distance" type="number" class="form-control border-0" placeholder="Distance" style="height: 55px;" />
 								<span asp-validation-for="Distance" class="text-light"></span>
 							</div>
-							<div class="date col-12" id="date1" data-target-input="nearest">
-								<input value="@Model.DepartureTime" asp-for"DepartureTime" type="text" name="DepartureTime"
-									   class="form-control border-0 datetimepicker-input"
-									   placeholder="DepartureTime" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
+							<div class="date col-12">
+								<label asp-for="DepartureTime" class="text-light"></label>
+								<input asp-for="DepartureTime" class="form-control" />
 								<span asp-validation-for="DepartureTime" class="text-light"></span>
 							</div>
-							<div class="date col-12" id="date2" data-target-input="nearest">
-								<input value="@Model.ArrivalTime"asp-for"ArrivalTime" type="text" name="ArrivalTime"
-									   class="form-control border-0 datetimepicker-input"
-									   placeholder="ArrivalTime" data-target="#date2" data-toggle="datetimepicker" style="height: 55px;">
-								<span asp-validation-for="ArrivalTime" class="text-light"></span>
+							<div class="date col-12">
+								<div class="date col-12">
+									<label asp-for="ArrivalTime" class="text-light"></label>
+									<input asp-for="ArrivalTime" class="form-control" />
+									<span asp-validation-for="ArrivalTime" class="text-light"></span>
+								</div>
 							</div>
 							<div class="col-12">
 								<select asp-for="CarId" class="form-control" asp-items="carsOptions" style="height: 55px;"><option value="" selected>Choose your car</option></select>
